@@ -12,7 +12,7 @@ app.use( '/api', router)
 app.use(cors());
 
 
-const server = app.listen(port, (err) => {
+const server = app.listen(process.env.PORT || port, (err) => {
     if(err){
         console.error("ERROR: " + err);
     } else {
