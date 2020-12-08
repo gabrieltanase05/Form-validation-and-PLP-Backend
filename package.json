@@ -4,7 +4,7 @@
   "description": "A NodeJS Server for Products list and credentials validation",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js"
   },
   "author": "Gabriel Tanase",
   "license": "ISC",
