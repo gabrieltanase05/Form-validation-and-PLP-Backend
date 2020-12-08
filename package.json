@@ -1,0 +1,19 @@
+{
+  "name": "nodejs_server_products_credentials",
+  "version": "1.0.0",
+  "description": "A NodeJS Server for Products list and credentials validation",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "author": "Gabriel Tanase",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
