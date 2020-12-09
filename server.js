@@ -16,22 +16,20 @@ router.get('/products', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200', 'Cache-Control', 'max-age=31536000');
     fs.readFile(productsPath, (err, data) => {
         if(err){
-            console.log("ERROR: " + err);
+            res.status(500).send(err)
         } else {
-            res.send(JSON.parse(data))
-            console.log(JSON.parse(data))
-
+            res.status(200).send(JSON.parse(data))
         }
     })
 })
 //API for form validation regEx
 router.get('/regEx', (req, res) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Origin', '*', 'Cache-Control', 'max-age=31536000');
     fs.readFile(regExPath, (err, data) => {
         if(err){
-            console.log("ERROR: " + err);
+            res.status(500).send(err)
         } else {
-            res.send(JSON.parse(data))
+            res.status(200).send(JSON.parse(data))
         }
     })
 })
