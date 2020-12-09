@@ -1,28 +1,17 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
+// Imports
+import express from 'express';
+import cors from 'cors';
 const productsPath = './data/products.json';
 const regExPath = './data/regEx.json';
+import fs from 'fs';
 
+// App config
 const app = express();
-const fs = require('fs');
-const port = 8080;
 const router = express.Router();
 app.use( '/api', router)
 app.use(cors());
 
-
-const server = app.listen(process.env.PORT || port, (err) => {
-    if(err){
-        console.error("ERROR: " + err);
-    } else {
-        console.log("Server listening on port " + port)
-    }
-
-})
-
-
-//API Products-
+//API Products
 router.get('/products', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200', 'Cache-Control', 'max-age=31536000');
     fs.readFile(productsPath, (err, data) => {
@@ -62,4 +51,9 @@ router.get('/product/:product_number/amount/:product_amount', (req, res) => {
         }
     })
 });
+
+
+//Listening Server on ENV PORT or 8080
+app.listen(process.env.PORT || 8080, () => console.log("Server listening on port 8080"))
+
 

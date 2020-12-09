@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A NodeJS Server for Products list and credentials validation",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "start": "node server.js"
   },
@@ -14,6 +15,6 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.6"
   }
 }
